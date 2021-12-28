@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: UserService
+  labels:
+    app: web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: UserService
+          image: pdecontainerregistry.azurecr.io/UserService:Latest
+          ports:
+            - containerPort: 9001
+
+# kind: Service 
+# apiVersion: v1 
+# metadata: 
+#   name: UserService
+# spec: 
+#   selector: 
+#     app: web 
+#   ports: 
+#   - protocol: TCP 
+#     port: 9001 
+#     targetPort: 9001 
+#   type: LoadBalancer
