@@ -21,15 +21,15 @@ spec:
           ports:
             - containerPort: 9001
 
-# kind: Service 
-# apiVersion: v1 
-# metadata: 
-#   name: UserService
-# spec: 
-#   selector: 
-#     app: web 
-#   ports: 
-#   - protocol: TCP 
-#     port: 9001 
-#     targetPort: 9001 
-#   type: LoadBalancer
+ kind: Service
+ apiVersion: v1 
+ metadata:
+   name: UserService
+ spec: 
+   selector: 
+     app: web 
+   ports: 
+   - protocol: TCP 
+     port: 9001 
+     targetPort: 9001 
+   type: LoadBalancer
