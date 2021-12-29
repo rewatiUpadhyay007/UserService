@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: userservice
-          image: pdecontainerregistry.azurecr.io/useruervice:_version_
+          image: pdecontainerregistry.azurecr.io/userservice:_version_
           ports:
             - containerPort: 9001
 ---
