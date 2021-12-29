@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: UserService
+  name: userdatareporting
   labels:
     app: web
 spec:
@@ -16,15 +16,15 @@ spec:
         app: web
     spec:
       containers:
-        - name: UserService
-          image: pdecontainerregistry.azurecr.io/UserService:Latest
+        - name: userservice
+          image: pdecontainerregistry.azurecr.io/useruervice:_version_
           ports:
             - containerPort: 9001
-
+---
  kind: Service
  apiVersion: v1 
  metadata:
-   name: UserService
+   name: userservice
  spec: 
    selector: 
      app: web 
